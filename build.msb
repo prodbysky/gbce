@@ -1,0 +1,3 @@
+target main outputs(gbce) [files(src/main.c) targets()] {
+    gcc src/main.c -o gbce -ggdb -Wall -Wextra -pedantic -std=c11
+}

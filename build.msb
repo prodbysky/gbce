@@ -1,3 +1,9 @@
-target main outputs(gbce) [files(src/main.c) targets()] {
-    gcc src/main.c -o gbce -ggdb -Wall -Wextra -pedantic -std=c11
+target main outputs(gbce) [files(src/main.c) targets(registers)] 
+{
+    gcc src/main.c registers.o -o gbce -ggdb -Wall -Wextra -pedantic -std=c11
+}
+
+target registers outputs(registers.o) [files(src/registers.c, src/registers.h) targets()] 
+{
+    gcc src/registers.c -c -o registers.o -ggdb -Wall -Wextra -pedantic -std=c11
 }
